@@ -1,0 +1,10 @@
+---
+- name: use of debug
+  hosts: all
+  tasks: 
+   - name: print date
+     command: cal
+     register: re
+   - name: print resilt
+     debug: 
+      var: re

@@ -1,0 +1,17 @@
+---
+- name: loops using
+  hosts: all
+  vars:
+    pk:
+     - httpd
+     - mariadb
+     - nginx
+  tasks:
+   - name: install set of soft
+     yum: 
+      name: "{{ item }}"
+      state: present
+     loop:  "{{ pk }}"    
+
+
+

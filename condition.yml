@@ -1,0 +1,15 @@
+---
+- name: playbook for condition
+  hosts: all 
+  tasks: 
+   - name: print size
+     ansible.builtin.setup:
+       filter: ansible_memtotal_mb
+     register: s
+   - name:
+     yum:
+       name: httpd
+       state: absent
+     when: s.ansible_facts.ansible_memtotal_mb <= 300
+
+

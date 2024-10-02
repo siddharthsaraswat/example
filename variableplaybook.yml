@@ -1,0 +1,11 @@
+---
+- name: define variable in playbook
+  hosts: all
+  vars:
+    pkg: httpd
+  tasks: 
+  - name: define variable
+    yum:
+     name: "{{pkg}}"
+     state: present
+

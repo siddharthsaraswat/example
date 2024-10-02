@@ -1,0 +1,9 @@
+---
+- name: declare variable out of playbook
+  hosts: all
+  vars_files: vars.yml
+  tasks:
+   - name: create a user alredy defined in vars
+     user:
+      name: "{{ nme }}"
+      state: present

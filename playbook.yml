@@ -1,0 +1,9 @@
+---
+- name: example of just a smple play book creating a new user
+  hosts: all
+  tasks:
+    - name: creating a user and directory in servers
+      user:
+       name: ansiblet
+       state: present
+

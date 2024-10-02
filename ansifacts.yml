@@ -1,0 +1,7 @@
+---
+- name: usinf ansifacts
+  hosts: all
+  tasks:
+   - name:  using asi facts 
+     debug:
+      var: ansible_os_family 

@@ -1,0 +1,8 @@
+---
+- name: variable defined in host files
+  hosts: all
+  tasks:
+    - name: user
+      user: 
+       name: "{{ name }}"
+       state: present
