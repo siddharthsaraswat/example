@@ -1,0 +1,15 @@
+---
+- name: ignore error
+  hosts: all
+  vars:
+   pkg:
+     - httpd
+     - httpds
+     - maven
+     - docker
+  tasks:
+    - name: "{{pkg}}" 
+      yum:
+       name: "{{pkg}}"
+       state: present
+      ignore_errors: yes   

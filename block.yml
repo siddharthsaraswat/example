@@ -1,0 +1,16 @@
+---
+- name: blocks
+  hosts: all
+  tasks:
+   - name: block service
+     block:
+       - name: use of block service
+         yum: 
+          name: httpd
+          state: present
+       - name: useradd
+         user:
+           name: block_service
+           state: present
+     when: ansible_os_family == "RedHat"  
+            

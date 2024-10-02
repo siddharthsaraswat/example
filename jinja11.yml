@@ -1,0 +1,8 @@
+---
+- name: use of j2 template
+  hosts: all
+  tasks: 
+  - name: update host files with details
+    template:
+         src: jinja1.j2
+        dest: /tmp/host

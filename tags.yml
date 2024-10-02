@@ -1,0 +1,21 @@
+---
+- name: using of tags
+  hosts: all
+  tasks:
+   - name: 1st tag
+     yum:
+      name: httpd
+      state: present
+     tags:
+       - 1no
+   - name: 2nd tags
+     user:
+      name: usertag
+      state: present
+     tags:
+       - 2nd
+   - name: 3rd tags
+     command: touch /home/ramu/tag3s
+     tags:
+        - 3rd  
+      
