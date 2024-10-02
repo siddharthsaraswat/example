@@ -1,0 +1,6 @@
+---
+- name: play to operate roles
+  hosts: all
+  roles:
+    - server1
+
